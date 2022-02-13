@@ -1,0 +1,30 @@
+type LogAccountCreated @entity {
+  id: ID!
+  sender: Bytes! # address
+  owner: Bytes! # address
+  account: Bytes! # address
+  origin: Bytes! # address
+}
+
+type LogNewAccount @entity {
+  id: ID!
+  _newAccount: Bytes! # address
+  _connectors: Bytes! # address
+  _check: Bytes! # address
+}
+
+type LogNewCheck @entity {
+  id: ID!
+  accountVersion: BigInt! # uint256
+  check: Bytes! # address
+}
+
+type LogNewMaster @entity {
+  id: ID!
+  master: Bytes! # address
+}
+
+type LogUpdateMaster @entity {
+  id: ID!
+  master: Bytes! # address
+}
