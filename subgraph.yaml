@@ -1,4 +1,4 @@
-specVersion: 0.0.1
+specVersion: 0.0.2
 schema:
   file: ./schema.graphql
 dataSources:
@@ -14,22 +14,10 @@ dataSources:
       language: wasm/assemblyscript
       entities:
         - LogAccountCreated
-        - LogNewAccount
-        - LogNewCheck
-        - LogNewMaster
-        - LogUpdateMaster
       abis:
         - name: Token
           file: ./abis/Token.json
       eventHandlers:
         - event: LogAccountCreated(address,indexed address,indexed address,indexed address)
           handler: handleLogAccountCreated
-        - event: LogNewAccount(indexed address,indexed address,indexed address)
-          handler: handleLogNewAccount
-        - event: LogNewCheck(indexed uint256,indexed address)
-          handler: handleLogNewCheck
-        - event: LogNewMaster(indexed address)
-          handler: handleLogNewMaster
-        - event: LogUpdateMaster(indexed address)
-          handler: handleLogUpdateMaster
       file: ./src/mapping.ts
